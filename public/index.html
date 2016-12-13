@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="Sludgify">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sludgify</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+
+</head>
+<body ng-Controller="MainController as vm" ng-cloak>
+
+<h3>TESTING</h3>
+
+
+
+<div class="container">
+  <ul>
+    <li role="presentation" ui-sref-active="active">
+      <a ui-sref="homePage">Home</a>
+    </li>
+    <li role="presentation" ui-sref-active="active">
+      <a ui-sref="aboutPage">About</a>
+    </li>
+    <li role="presentation" ui-sref-active="active" ng-hide="vm.isLoggedIn()">
+      <a ui-sref="register">Register</a>
+    </li>
+  </ul>
+
+    <main class="content" ui-view>
+      <!-- PAGE TEMPLATES INSERT HERE -->
+    </main>
+
+</div>
+
+
+
+  <!-- Angular scripts -->
+  <script src="/app.module.js"></script>
+  <script src="/app.routes.js"></script>
+  <script src="/services/auth.token.js"></script>
+  <script src="/services/auth.interceptor.js"></script>
+  <script src="/services/auth.service.js"></script>
+  <script src="/services/user.dataservice.js"></script>
+  <script src="/controllers/main_controller.js"></script>
+  <script src="/controllers/login_controller.js"></script>
+  <script src="/controllers/users_controller.js"></script>
+  <script src="/controllers/songs_controller.js"></script>
+
+</body>
+</html>
