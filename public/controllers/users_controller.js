@@ -26,7 +26,6 @@
         }, function(err) {
           $log.error(err);
         });
-
     };
   };
 })();

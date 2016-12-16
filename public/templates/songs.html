@@ -1,4 +1,24 @@
 
-<h2>Using Spotify's API:</h2>
 
-{{vm.album}}
+<div ng-controller="SongsController as songs" id="container-search">
+  <h3>Powered by Spotify's Web API:</h3>
+  <h5>Type a random word, mood, or thought followed by the genre of your choice</h5>
+    <form ng-submit="songs.search()" id="search-form">
+        <input type="text" ng-model="mind" value="" class="form-control" placeholder="?"/>
+        <input type="text" ng-model="genre" value="" class="form-control" placeholder="Choose a genre"/>
+        <input type="submit" id="search" class="btn btn-primary" value="Search" />
+    </form>
+    <div id="results">
+
+    <br>
+    <div ng-if="songs.selectedSong.image" id="imageResult">
+      <img ng-click="songs.songToggle();" ng-src="{{songs.selectedSong.image}}" alt="album" id="imageRespond">
+      <div id='search-text'>
+        <p>{{songs.selectedSong.genre}}</p>
+        <p>{{songs.selectedSong.album}}</p>
+        <p>{{songs.selectedSong.songName}}</p>
+      </div>
+
+
+    </div>
+</div>

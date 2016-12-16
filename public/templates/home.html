@@ -1,14 +1,15 @@
-Home
-
-
- <form class="form-inline" ng-submit="vm.login()">
-    <div class="form-group">
-      <label for="email">Email</label>
+<div id="container-login">
+ <form ng-submit="vm.login()">
+    <div class="form-group-top">
+      <label for="email"><i class="icon-envelope"></i> Email</label>
       <input type="text" id="email" class="form-control" placeholder="email" ng-model="vm.loginData.email" required />
     </div>
-    <div class="form-group">
-      <label for="inputPword1">Password</label>
+    <br>
+    <div class="form-group-bottom">
+      <label for="inputPword1"><i class="icon-key"></i> Password</label>
       <input type="password" id="inputPword1" class="form-control" placeholder="Password" ng-model="vm.loginData.password" required />
     </div>
+    <br>
     <button class="btn btn-success submit-login-button" type="submit">Login!</button>
   </form>
+</div>

@@ -7,6 +7,8 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
 
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
@@ -17,26 +19,41 @@
 </head>
 <body ng-Controller="MainController as vm" ng-cloak>
 
-<h3>TESTING</h3>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">Sludgify</a>
+    </div>
 
-
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li role="presentation" ui-sref-active="active">
+          <a ui-sref="homePage">Home</a>
+        </li>
+        <li role="presentation" ui-sref-active="active">
+          <a ui-sref="aboutPage">About</a>
+        </li>
+        <li role="presentation" ui-sref-active="active" ng-hide="vm.isLoggedIn()">
+          <a ui-sref="register">Register</a>
+        </li>
+        </ul>
+          <ul>
+            <li class="nav navbar-nav navbar-right" ng-show="vm.isLoggedIn()">
+              <a class="btn" ng-click="vm.logout()">Logout {{ vm.userService.user.email }}</a>
+            </li>
+         </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 <div class="container">
-  <ul>
-    <li role="presentation" ui-sref-active="active">
-      <a ui-sref="homePage">Home</a>
-    </li>
-    <li role="presentation" ui-sref-active="active">
-      <a ui-sref="aboutPage">About</a>
-    </li>
-    <li role="presentation" ui-sref-active="active" ng-hide="vm.isLoggedIn()">
-      <a ui-sref="register">Register</a>
-    </li>
-    <li ng-show="vm.isLoggedIn()">
-        <a class="btn" ng-click="vm.logout()">Logout {{ vm.userService.user.email }}</a>
-    </li>
-  </ul>
-
     <main class="content" ui-view>
       <!-- PAGE TEMPLATES INSERT HERE -->
     </main>

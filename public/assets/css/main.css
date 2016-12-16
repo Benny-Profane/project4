@@ -2,12 +2,65 @@
 html,
 body {
   box-sizing: border-box;
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Cabin Condensed', sans-serif;
 }
 
 body {
   font-size: 14px;
   padding: 50px;
+  background-color: gray
 }
+
+.form-group-top{
+  margin: auto;
+  width: 50%;
+}
+
+.form-group-bottom{
+  margin: auto;
+  width: 50%;
+}
+
+.play{
+  border: 3px solid red;
+  filter: blur(3px);
+}
+
+#image-result {
+  margin: auto;
+  text-align: center;
+}
+
+#container-search {
+  margin: auto;
+  text-align: center;
+}
+
+#search-form{
+  margin: auto;
+  width: 40%;
+}
+
+#container-login {
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: 70px;
+}
+
+#container-register {
+  margin: auto;
+  text-align: center;
+}
+
+#search-text {
+  font-size: large;
+  color: white;
+}
+
+#sludge {
+  text-align: center;
+}
+
 
 a { color: #00B7FF; }
